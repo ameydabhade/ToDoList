@@ -33,7 +33,7 @@ function ToDoList() {
 
     function editTask(id, updatedTask, save = false) {
         if (save) {
-            // Save the edited task
+
             setTasks((prev) =>
                 prev.map((task) =>
                     task.id === id ? { ...task, task: updatedTask } : task
@@ -41,7 +41,7 @@ function ToDoList() {
             );
             setEditingId(null);
         } else {
-            // Start editing
+
             setEditingId(id);
         }
     }
