@@ -13,7 +13,7 @@ function ToDoItem({ id, task, isChecked, isEditing, onToggle, onEdit, onRemove }
 
     function handleSaveEdit() {
         if (newTask.trim() === '') return;
-        onEdit(id, newTask, true); // Indicate save action with `true`
+        onEdit(id, newTask, true); 
     }
 
     return (
