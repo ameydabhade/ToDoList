@@ -1,31 +1,31 @@
 import { useState } from 'react';
 
-function ToDoItem({ id, task, isChecked, isEditing, onToggle, onEdit, onRemove }) {
-    const [newTask, setNewTask] = useState(task);
+function ToDoItem(props) {
+    const [newTask, setNewTask] = useState(props.task);
 
     function handleToggle() {
-        onToggle(id);
+        props.onToggle(props.id);
     }
 
     function handleEditStart() {
-        onEdit(id, task);
+        props.onEdit(props.id);
     }
 
     function handleSaveEdit() {
         if (newTask.trim() === '') return;
-        onEdit(id, newTask, true); 
+        props.onEdit(props.id, newTask, true);
     }
 
     return (
-        <li className="flex items-center justify-between space-x-4 mx-8  bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-all">
+        <li className="flex items-center justify-between space-x-4 mx-8 bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-all">
             <div className="flex items-center space-x-4">
                 <input
                     type="checkbox"
                     onChange={handleToggle}
-                    checked={isChecked}
+                    checked={props.isChecked}
                     className="h-5 w-5 text-green-500 hover:scale-110 transition duration-200"
                 />
-                {isEditing ? (
+                {props.isEditing ? (
                     <input
                         type="text"
                         value={newTask}
@@ -35,14 +35,16 @@ function ToDoItem({ id, task, isChecked, isEditing, onToggle, onEdit, onRemove }
                     />
                 ) : (
                     <span
-                        className={`text-xl ${isChecked ? 'line-through text-green-500' : 'text-gray-800'}`}
+                        className={`text-xl ${
+                            props.isChecked ? 'line-through text-green-500' : 'text-gray-800'
+                        }`}
                     >
-                        {task}
+                        {props.task}
                     </span>
                 )}
             </div>
             <div className="flex items-center space-x-3">
-                {isEditing ? (
+                {props.isEditing ? (
                     <button
                         onClick={handleSaveEdit}
                         className="bg-green-600 text-white hover:bg-green-700 px-4 py-2 rounded-lg transition duration-200"
@@ -52,14 +54,14 @@ function ToDoItem({ id, task, isChecked, isEditing, onToggle, onEdit, onRemove }
                 ) : (
                     <button
                         onClick={handleEditStart}
-                        className="bg-blue-600 text-white hover:bg-orange-300 px-4 py-2 rounded-lg transition duration-200"
+                        className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-lg transition duration-200"
                     >
                         Edit
                     </button>
                 )}
                 <button
-                    onClick={() => onRemove(id)}
-                    className="bg-blue-600 text-white hover:bg-orange-300 px-4 py-2 rounded-lg transition duration-200"
+                    onClick={() => props.onRemove(props.id)}
+                    className="bg-red-600 text-white hover:bg-red-700 px-4 py-2 rounded-lg transition duration-200"
                 >
                     ❌
                 </button>

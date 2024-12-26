@@ -47,7 +47,7 @@ function ToDoList() {
     }
 
     return (
-        <div className="bg-orange-300 p-6 rounded-lg shadow-lg">
+        <div className="bg-gray-800 p-6 rounded-lg shadow-lg ">
             <Header />
             <div className="p-4">
                 <div className="flex space-x-2 mb-4">
