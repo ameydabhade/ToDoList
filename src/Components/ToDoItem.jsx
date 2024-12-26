@@ -54,14 +54,14 @@ function ToDoItem(props) {
                 ) : (
                     <button
                         onClick={handleEditStart}
-                        className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-lg transition duration-200"
+                        className="bg-blue-600 text-white hover:bg-red-200 px-4 py-2 rounded-lg transition duration-200"
                     >
                         Edit
                     </button>
                 )}
                 <button
                     onClick={() => props.onRemove(props.id)}
-                    className="bg-red-600 text-white hover:bg-red-700 px-4 py-2 rounded-lg transition duration-200"
+                    className="bg-blue-600 text-white hover:bg-red-200 px-4 py-2 rounded-lg transition duration-200"
                 >
                     ❌
                 </button>
