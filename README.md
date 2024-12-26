@@ -1,7 +1,7 @@
 # To-Do List Application
 
-## Live Demo
-Check out the live version of the app here: [To-Do List](https://to-do-list-git-main-ameydabhades-projects.vercel.app)
+## Vercel
+Vercel : [To-Do List](https://to-do-list-git-main-ameydabhades-projects.vercel.app)
 
 ## Getting Started
 
