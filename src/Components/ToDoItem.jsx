@@ -23,7 +23,7 @@ function ToDoItem(props) {
                     type="checkbox"
                     onChange={handleToggle}
                     checked={props.isChecked}
-                    className="h-5 w-5 text-green-500 hover:scale-110 transition duration-200"
+                    className="h-5 w-5 text-green-500 scale-150 hover:scale-[1.6]  transition duration-200"
                 />
                 {props.isEditing ? (
                     <input
@@ -47,7 +47,7 @@ function ToDoItem(props) {
                 {props.isEditing ? (
                     <button
                         onClick={handleSaveEdit}
-                        className="bg-green-600 text-white hover:bg-green-700 px-4 py-2 rounded-lg transition duration-200"
+                        className="bg-green-600 text-white hover:bg-green-700 hover:scale-105 px-4 py-2 rounded-lg transition duration-200"
                     >
                         Save
                     </button>
@@ -61,7 +61,7 @@ function ToDoItem(props) {
                 )}
                 <button
                     onClick={() => props.onRemove(props.id)}
-                    className="bg-blue-600 text-white hover:bg-red-200 px-4 py-2 rounded-lg transition duration-200"
+                    className="bg-blue-600 text-white hover:bg-red-200 hover:scale-105 px-4 py-2 rounded-lg transition duration-200"
                 >
                     ❌
                 </button>
